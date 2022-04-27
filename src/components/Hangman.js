@@ -1,12 +1,15 @@
 import React from "react";
+import Image from "./Image";
+import Hint from "./Hint";
+import Word from "./Word";
 
 function Hangman() {
     return(
         <>
         <h1>Hangman</h1>
-        {/* img of hangman */}
-        {/* hint for word */}
-        {/* display for correct keystrokes */}
+        <Image />
+        <Hint />
+        <Word />
         </>
     )
 }
