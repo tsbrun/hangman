@@ -13,24 +13,21 @@ function Hangman() {
             try {
                 const response = await fetch(url)
                 const json = await response.json()
-                // console.log('i fire once')
-                // console.log(json)
-                setLevel(json)
+                setLevel(json.render)
             } catch (error) {
                 console.log("error", error)
             }
         }
 
         fetchData()
-        // console.log(level)
+        console.log(level)
     }, [])
 
     
     return(
         <>
-        <h1>Hangman</h1>
         <Image />
-        <Hint hint={level.render.hint} />
+        <Hint hint={level.hint} />
         <Word />
         </>
     )
