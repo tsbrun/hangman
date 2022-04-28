@@ -1,9 +1,9 @@
 import React from "react";
 
-function Hint() {
+function Hint({ hint }) {
     return(
         <>
-        <p><b>HINT:</b> this is where the hint goes lol</p>
+        <p><b>HINT:</b> {hint}</p>
         </>
     )
 }
