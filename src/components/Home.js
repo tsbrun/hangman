@@ -16,9 +16,6 @@ function Home() {
             If it's not, a stickman will be progressively drawn with every mistake 
             until he becomes, well, a hangman.
         </p>
-
-        {/* takes user to <Levels /> */}
-        <button>Let's Get Started</button>
         </>
     )
 }

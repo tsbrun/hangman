@@ -9,12 +9,15 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Link to="/home">Home</Link> {" | "}
-      <Link to="/levels">Levels</Link> {" | "}
-      <Link to="/hangman">Hangman</Link>
-
       <h1>Hangman</h1>
-      {/* <Home /> */}
+      <Home />
+
+      <Link to="/levels">
+        <button type="button">
+          Let's Get Started
+        </button>
+      </Link>
+
       {/* <Levels /> */}
       {/* <ErrorBoundary> */}
         {/* <Hangman /> */}
