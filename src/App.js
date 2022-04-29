@@ -1,8 +1,5 @@
 import './App.css';
 import Home from './components/Home';
-// import Levels from './components/Levels';
-// import ErrorBoundary from './components/ErrorBoundary';
-// import Hangman from './components/Hangman';
 
 import { Link } from "react-router-dom";
 
@@ -17,11 +14,6 @@ function App() {
           Let's Get Started
         </button>
       </Link>
-
-      {/* <Levels /> */}
-      {/* <ErrorBoundary> */}
-        {/* <Hangman /> */}
-      {/* </ErrorBoundary> */}
     </div>
   );
 }
