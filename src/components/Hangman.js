@@ -3,11 +3,12 @@ import Image from "./Image";
 import Hint from "./Hint";
 import Word from "./Word";
 
-function Hangman() {
+function Hangman({id}) {
     const [level, setLevel] = useState("")
 
     useEffect(() => {
-        const url = "http://localhost:3001/levels/1"
+        console.log(id)
+        const url = `http://localhost:3001/levels/${id.id}`
 
         const fetchData = async () => {
             try {

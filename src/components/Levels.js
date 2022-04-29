@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Level from "./Level";
+import { Link } from "react-router-dom";
 
 function Levels() {
     const [levels, setLevels] = useState("")
@@ -29,7 +30,11 @@ function Levels() {
     return(
         <>
         <div className="levels-container">
-            {levelsArray.map(x => <Level key={x + 1} id={x + 1} />)}
+            {levelsArray.map(x => (
+                <Link to={`/hangman/${x + 1}`}>
+                    <Level key={x + 1} id={x + 1} />
+                </Link>
+            ))}
         </div>
         </>
     )

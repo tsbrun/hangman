@@ -14,7 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/levels" element={<LevelsRoute />} />
-        <Route path="/hangman" element={<HangmanRoute />} />
+        <Route path={"/hangman/:id"} element={<HangmanRoute />} />
       </Routes> 
     </BrowserRouter>
   </React.StrictMode>
