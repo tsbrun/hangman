@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "./Image";
 import Hint from "./Hint";
 import Word from "./Word";
+import { Link } from "react-router-dom";
 
 function Hangman({id}) {
     const [level, setLevel] = useState("")
@@ -27,6 +28,8 @@ function Hangman({id}) {
     
     return(
         <>
+        <Link to="/">Home</Link>
+
         <Image />
         <Hint hint={level.hint} />
         <Word />

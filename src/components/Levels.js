@@ -29,6 +29,8 @@ function Levels() {
 
     return(
         <>
+        <Link to="/">Home</Link>
+        
         <div className="levels-container">
             {levelsArray.map(x => (
                 <Link to={`/hangman/${x + 1}`}>
