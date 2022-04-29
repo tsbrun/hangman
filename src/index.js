@@ -15,6 +15,14 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/levels" element={<LevelsRoute />} />
         <Route path={"/hangman/:id"} element={<HangmanRoute />} />
+        <Route 
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <h1>404 Not Found</h1>
+            </main>
+          }
+        />
       </Routes> 
     </BrowserRouter>
   </React.StrictMode>
