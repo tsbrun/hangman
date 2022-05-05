@@ -1,9 +1,15 @@
 import React from "react";
 
-function Word() {
+function Word({ word }) {
+    // function handleKeyDown(e) {
+    //     console.log(e)
+    // }
+
     return(
         <>
-        <p>_ _ _ _ _</p>
+        <div tabIndex="0" onKeyDown={(e) => console.log(e.key)}>
+            <p>{word}</p>
+        </div>
         </>
     )
 }
