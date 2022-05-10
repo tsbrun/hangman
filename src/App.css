@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.hangman-word p {
+  display: grid;
+  justify-items: start;
+  grid-template-columns: repeat(10, 10%);
+}

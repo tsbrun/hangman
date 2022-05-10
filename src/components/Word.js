@@ -1,14 +1,23 @@
 import React from "react";
 
 function Word({ word }) {
-    // function handleKeyDown(e) {
-    //     console.log(e)
-    // }
+    const componentArray = []
+
+    function handleOnKeyDown(e) {
+        console.log(e.key)
+    }
+
+    if (word) {
+        for (const letter in word) {
+            componentArray.push(<input className="hangman-input" type="text" value="_" onKeyDown={handleOnKeyDown}></input>)
+        }
+    } 
 
     return(
         <>
-        <div tabIndex="0" onKeyDown={(e) => console.log(e.key)}>
-            <p>{word}</p>
+        {/* tabIndex="0" onKeyDown={(e) => console.log(e.key)} */}
+        <div className="hangman-word" >
+            <p>{componentArray}</p>
         </div>
         </>
     )
