@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
-export default function Letter() {
+export default function Letter({ key, answer }) {
     const [letter, setLetter] = useState('')
+
+    console.log(key, answer)
 
     function handleOnKeyDown(e) {
         console.log(e.key)

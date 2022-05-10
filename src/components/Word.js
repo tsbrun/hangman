@@ -5,10 +5,10 @@ function Word({ word }) {
     const componentArray = []
 
     if (word) {
-        for (const letter in word) {
-            componentArray.push(<Letter />)
+        for (let i = 0; i < word.length; i++) {
+            componentArray.push(<Letter key={i} answer={word[i]} />)
         }
-    } 
+    }
 
     return(
         <>
