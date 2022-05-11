@@ -11,13 +11,21 @@ class Letter extends React.Component {
     }
 
     handleOnKeyDown = (e) => {
-        // if (e.key === /^[a-zA-Z]*$/) {
-            if (this.state.answer === e.key) {
-                console.log('yay, green box')
-            } else if (this.state.answer !== e.key) {
-                console.log('whoops, red box')
-            }
-        // }
+        switch(e.key) {
+            case "Backspace":
+                break;
+            case "Tab":
+                break;
+            case " ":
+                break;
+            default: 
+                if (this.state.answer === e.key) {
+                    console.log('yay, green box')
+                } else if (this.state.answer !== e.key) {
+                    console.log('whoops, red box')
+                }
+                return;
+        }
     }
 
     render() {
