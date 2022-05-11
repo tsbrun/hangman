@@ -8,7 +8,7 @@ function Hangman({id}) {
     const [level, setLevel] = useState("")
 
     useEffect(() => {
-        console.log(id)
+        // console.log(id)
         const url = `http://localhost:3001/levels/${id.id}`
 
         const fetchData = async () => {
@@ -22,9 +22,8 @@ function Hangman({id}) {
         }
 
         fetchData()
-        console.log(level)
+        // console.log(level)
     }, [])
-
     
     return(
         <>
@@ -32,7 +31,7 @@ function Hangman({id}) {
 
         <Image />
         <Hint hint={level.hint} />
-        <Word />
+        <Word word={level.word} />
         </>
     )
 }
