@@ -27,7 +27,7 @@ function Hangman({id}) {
     
     return(
         <>
-        <Link to="/">Home</Link>
+        <Link to="/">Home</Link> | <Link to="/levels">Levels</Link>
 
         <Image />
         <Hint hint={level.hint} />
