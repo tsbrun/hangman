@@ -10,11 +10,11 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Provider>
-    <BrowserRouter store={store}>
-      <Routes>
+
+const Root = ({ store }) => (
+  <Provider store={store}>
+    <BrowserRouter>
+    <Routes>
         <Route path="/" element={<App />} />
         <Route path="/levels" element={<LevelsRoute />} />
         <Route path={"/hangman/:id"} element={<HangmanRoute />} />
@@ -26,11 +26,37 @@ root.render(
             </main>
           }
         />
-      </Routes> 
+      </Routes>
     </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
-);
+  </Provider>
+)
+
+root.render(<Root store={store} />)
+
+// ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     {/* <Provider> */}
+//     <BrowserRouter store={store}>
+//       <Routes>
+//         {/* <Route path="/" element={<App />} /> */}
+//         <Route path="/levels" element={<LevelsRoute />} />
+//         <Route path={"/hangman/:id"} element={<HangmanRoute />} />
+//         <Route 
+//           path="*"
+//           element={
+//             <main style={{ padding: "1rem" }}>
+//               <h1>404 Not Found</h1>
+//             </main>
+//           }
+//         />
+//       </Routes> 
+//     </BrowserRouter>
+//     {/* </Provider> */}
+//   </React.StrictMode>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
