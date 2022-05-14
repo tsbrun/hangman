@@ -15,8 +15,6 @@ function Levels() {
         dispatch(fetchLevels())
     }, [])
 
-    levels.map(x => console.log(x.id))
-
     return(
         <>
         <Link to="/">Home</Link>
