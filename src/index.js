@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LevelsRoute from './routes/levels';
 import HangmanRoute from './routes/hangman';
+import FormRoute from './routes/form';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 
@@ -18,7 +19,8 @@ const Root = ({ store }) => (
         <Route path="/" element={<App />} />
         <Route path="/levels" element={<LevelsRoute />} />
         <Route path={"/hangman/:id"} element={<HangmanRoute />} />
-        <Route 
+        <Route path="/add-new-level" element={<FormRoute />} />
+        <Route
           path="*"
           element={
             <main style={{ padding: "1rem" }}>

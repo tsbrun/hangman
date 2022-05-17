@@ -18,8 +18,6 @@ function App() {
       dispatch(fetchLevels())
   }, [dispatch])
   
-  console.log(levels)
-
   return (
     <div className="App">
       <h1>Hangman</h1>
@@ -27,6 +25,12 @@ function App() {
 
       <Link to={"/levels"} state={{ levels: levels }}>
         <button>Let's Get Started</button>
+      </Link>
+
+      <br /><br /> 
+
+      <Link to={"/add-new-level"}>
+        <button>Add Your Own Level</button>
       </Link>
       
     </div>
