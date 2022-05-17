@@ -4,10 +4,8 @@ import Hint from "./Hint";
 import Word from "./Word";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { fetchLevels, levelsSelector } from "../features/levels/levelsSlice";
-import { useDispatch, useSelector } from "react-redux";
 
-function Hangman({ id }) {
+function Hangman() {
     const location = useLocation()
     const { level } = location.state
     

@@ -32,7 +32,7 @@ function App() {
       <div className="levels-container">
             {levels.map(x => (
                 <Link to={`/hangman/${x.id}`} state={{ level: x }}>
-                    <Level key={x.id} id={x.id} />
+                    <Level key={x.id} />
                 </Link>
             ))}
         </div>
