@@ -1,19 +1,11 @@
-import React, { useEffect } from "react"; // useState
-import { useDispatch, useSelector } from "react-redux";
+import React from "react"; // useState
 import Level from "./Level";
 import { Link } from "react-router-dom";
-import { fetchLevels, levelsSelector } from "../features/levels/levelsSlice";
+import { useLocation } from 'react-router-dom';
 
 function Levels() {
-    // initialize redux hook
-    const dispatch = useDispatch()
-    const { levels, loading, hasErrors } = useSelector(levelsSelector)
-
-
-    // dispatch thunk when component first mounts
-    useEffect(() => {
-        dispatch(fetchLevels())
-    }, [dispatch])
+    const location = useLocation()
+    const { levels } = location.state
 
     return(
         <>
@@ -21,7 +13,7 @@ function Levels() {
         
         <div className="levels-container">
             {levels.map(x => (
-                <Link to={`/hangman/${x.id}`}>
+                <Link to={`/hangman/${x.id}`} state={{ level: x }}>
                     <Level key={x.id} id={x.id} />
                 </Link>
             ))}
