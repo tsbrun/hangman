@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "./Image";
-import Hint from "./Hint";
-import Word from "./Word";
+import Image from "../components/hangman/Image";
+import Hint from "../components/hangman/Hint";
+import Word from "../components/hangman/Word";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 

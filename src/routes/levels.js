@@ -1,4 +1,4 @@
-import Levels from "../components/Levels"
+import Levels from "../containers/Levels"
 
 export default function LevelsRoute() {
     return (
