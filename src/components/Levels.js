@@ -13,7 +13,7 @@ function Levels() {
     // dispatch thunk when component first mounts
     useEffect(() => {
         dispatch(fetchLevels())
-    }, [])
+    }, [dispatch])
 
     return(
         <>

@@ -15,7 +15,7 @@ function Hangman({ id }) {
     // dispatch thunk when component first mounts
     useEffect(() => {
         dispatch(fetchLevels())
-    }, [])
+    }, [dispatch])
 
     const level = levels[id.id]
     
