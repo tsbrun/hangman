@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class LevelForm extends React.Component {
     constructor(props) {
@@ -25,6 +26,23 @@ export default class LevelForm extends React.Component {
         alert('A level was submitted: ' + this.state.hint + ' ' + this.state.word)
         console.log(this.state)
         event.preventDefault()
+
+        fetch("http://localhost:3001/levels", {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify(this.state)
+        }).then(resp => {
+            // console.log(resp)
+            if (resp.status === 200) {
+                alert("Level submitted successfully.")
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+
+        this.setState({ hint: '', word: '' })
     }
 
     render() {
@@ -44,6 +62,8 @@ export default class LevelForm extends React.Component {
                 <br /><br />
                 <input type="submit" value="Submit" />
             </form>
+            <br />
+            <Link to={"/"}>Back to Homepage</Link>
             </>
         )
     }
