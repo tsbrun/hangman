@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LevelsRoute from './routes/levels';
 import HangmanRoute from './routes/hangman';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+
+const Root = ({ store }) => (
+  <Provider store={store}>
     <BrowserRouter>
-      <Routes>
+    <Routes>
         <Route path="/" element={<App />} />
         <Route path="/levels" element={<LevelsRoute />} />
         <Route path={"/hangman/:id"} element={<HangmanRoute />} />
@@ -23,10 +26,12 @@ root.render(
             </main>
           }
         />
-      </Routes> 
+      </Routes>
     </BrowserRouter>
-  </React.StrictMode>
-);
+  </Provider>
+)
+
+root.render(<Root store={store} />)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

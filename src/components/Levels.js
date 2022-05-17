@@ -1,40 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react"; // useState
+import { useDispatch, useSelector } from "react-redux";
 import Level from "./Level";
 import { Link } from "react-router-dom";
+import { fetchLevels, levelsSelector } from "../features/levels/levelsSlice";
 
 function Levels() {
-    const [levels, setLevels] = useState("")
+    // initialize redux hook
+    const dispatch = useDispatch()
+    const { levels, loading, hasErrors } = useSelector(levelsSelector)
 
+
+    // dispatch thunk when component first mounts
     useEffect(() => {
-        const url = "http://localhost:3001/levels"
-
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url)
-                const json = await response.json()
-                setLevels(json.levels)
-            } catch (error) {
-                console.log("error", error)
-            }
-        }
-
-        fetchData()
-    }, [])
-
-    const levelsArray = []
-
-    for (let i = 0; i < levels.length; i++) {
-        levelsArray.push(i)
-    }
+        dispatch(fetchLevels())
+    }, [dispatch])
 
     return(
         <>
         <Link to="/">Home</Link>
         
         <div className="levels-container">
-            {levelsArray.map(x => (
-                <Link to={`/hangman/${x + 1}`}>
-                    <Level key={x + 1} id={x + 1} />
+            {levels.map(x => (
+                <Link to={`/hangman/${x.id}`}>
+                    <Level key={x.id} id={x.id} />
                 </Link>
             ))}
         </div>
