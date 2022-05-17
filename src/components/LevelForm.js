@@ -23,8 +23,6 @@ export default class LevelForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A level was submitted: ' + this.state.hint + ' ' + this.state.word)
-        console.log(this.state)
         event.preventDefault()
 
         fetch("http://localhost:3001/levels", {
@@ -34,7 +32,6 @@ export default class LevelForm extends React.Component {
             },
             body: JSON.stringify(this.state)
         }).then(resp => {
-            // console.log(resp)
             if (resp.status === 200) {
                 alert("Level submitted successfully.")
             }
