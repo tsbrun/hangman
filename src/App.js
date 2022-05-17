@@ -7,6 +7,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLevels, levelsSelector } from './features/levels/levelsSlice';
 
+import Level from './components/Level';
+
 function App() {
   // initialize redux hook
   const dispatch = useDispatch()
@@ -27,13 +29,13 @@ function App() {
 
       <h2>Let's Get Started</h2>
 
-      {/* <Levels /> */}
-
-      {/* <Link to="/levels">
-        <button type="button">
-          Let's Get Started
-        </button>
-      </Link> */}
+      <div className="levels-container">
+            {levels.map(x => (
+                <Link to={`/hangman/${x.id}`} state={{ level: x }}>
+                    <Level key={x.id} id={x.id} />
+                </Link>
+            ))}
+        </div>
     </div>
   );
 }
