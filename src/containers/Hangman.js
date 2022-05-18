@@ -17,6 +17,7 @@ function Hangman() {
     const [guesses, setGuesses] = useState([])
     const [counter, setCounter] = useState(8)
 
+    // onClick event handler
     function checkGuess(event) {
         const guess = event.key
         for (var i = 0; i < word.length; i++) {
@@ -38,6 +39,12 @@ function Hangman() {
             setCounter(counter - 1)
         }
     }
+
+    console.log(word, guesses, counter)
+
+    const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
     return(
         <>
@@ -47,6 +54,10 @@ function Hangman() {
         <Image />
         <Hint hint={level.hint} />
         {/* <Word word={level.word} /> */}
+
+        <div className="word-container">
+            {alphabet.map(letter => <button onClick={e => checkGuess(e)}>{letter}</button>)}
+        </div>
         </>
     )
 }
