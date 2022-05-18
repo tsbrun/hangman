@@ -19,20 +19,22 @@ function Hangman() {
 
     // onClick event handler
     function checkGuess(event) {
-        const guess = event.key
+        const guess = event.target.innerHTML
         for (var i = 0; i < word.length; i++) {
+            // this is not working
             if (word[i] === guess) {
                 // make shallow copy of guesses
-                let guessesCopy = guesses 
+                // let guessesCopy = guesses 
                 // make shallow copy of indice to mutate
-                let guessFromGuessesCopy = {...guessesCopy[i]}
+                // let guessFromGuessesCopy = {...guessesCopy[i]}
                 // set event.key as value at i 
-                guessFromGuessesCopy = guess
+                // guessFromGuessesCopy = guess
                 // put new value into copy of array
-                guessesCopy[i] = guessFromGuessesCopy
+                // guessesCopy[i] = guessFromGuessesCopy
                 // set state to new copy
-                setGuesses({guessesCopy})
-            }
+                // setGuesses({guessesCopy})
+                setGuesses(guesses[i] = guess)
+            } 
         }
         var j = (word.indexOf(guess))
         if (j === -1) {
@@ -57,6 +59,7 @@ function Hangman() {
 
         <div className="word-container">
             {alphabet.map(letter => <button onClick={e => checkGuess(e)}>{letter}</button>)}
+            {guesses}
         </div>
         </>
     )
