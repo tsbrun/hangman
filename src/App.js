@@ -24,12 +24,6 @@ function App() {
       <h1>Hangman</h1>
       <Home />
 
-      {/* <Link to={"/levels"} state={{ levels: levels }}>
-        <button>Let's Get Started</button>
-      </Link> */}
-
-      <h2>Let's Get Started</h2>
-
       <Levels data={levels}  />
 
       <br /><br /> 
