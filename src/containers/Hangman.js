@@ -17,23 +17,20 @@ function Hangman() {
     const [guesses, setGuesses] = useState([])
     const [counter, setCounter] = useState(8)
 
+    if (counter === 0) {
+        alert('You lost')
+        setCounter(8)
+        setGuesses([])
+    }
+
     // onClick event handler
     function checkGuess(event) {
-        const guess = event.target.innerHTML
+        const guess = event.target.innerText
         for (var i = 0; i < word.length; i++) {
-            // this is not working
             if (word[i] === guess) {
-                // make shallow copy of guesses
-                // let guessesCopy = guesses 
-                // make shallow copy of indice to mutate
-                // let guessFromGuessesCopy = {...guessesCopy[i]}
-                // set event.key as value at i 
-                // guessFromGuessesCopy = guess
-                // put new value into copy of array
-                // guessesCopy[i] = guessFromGuessesCopy
-                // set state to new copy
-                // setGuesses({guessesCopy})
-                setGuesses(guesses[i] = guess)
+                let copy = guesses 
+                copy.splice(i, 0, guess)
+                setGuesses(copy)
             } 
         }
         var j = (word.indexOf(guess))
