@@ -17,7 +17,6 @@ const Root = ({ store }) => (
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/levels" element={<LevelsRoute />} />
         <Route path={"/hangman/:id"} element={<HangmanRoute />} />
         <Route path="/add-new-level" element={<FormRoute />} />
         <Route

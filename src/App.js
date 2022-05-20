@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLevels, levelsSelector } from './features/levels/levelsSlice';
+import Levels from './containers/Levels';
 
 function App() {
   // initialize redux hook
@@ -23,9 +24,7 @@ function App() {
       <h1>Hangman</h1>
       <Home />
 
-      <Link to={"/levels"} state={{ levels: levels }}>
-        <button>Let's Get Started</button>
-      </Link>
+      <Levels data={levels}  />
 
       <br /><br /> 
 
