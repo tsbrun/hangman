@@ -20,6 +20,16 @@ function Hangman() {
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'])
 
+    if (counter === 0) {
+        alert("You lost")
+        setCounter(8)
+        setGuesses([])
+    } else if (word.join('') === guesses.join('')) {
+        alert("You won")
+        setCounter(8)
+        setGuesses([])
+    }
+
     // onClick event handler
     function checkGuess(event) {
         const guess = event.target.innerText
