@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hint({ hint }) {
+export default function Hint({ hint }) {
     return(
         <>
         <p><b>HINT:</b> {hint}</p>
@@ -8,4 +8,3 @@ function Hint({ hint }) {
     )
 }
 
-export default Hint;
