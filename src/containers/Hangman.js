@@ -35,9 +35,8 @@ function Hangman() {
                 copy.splice(i, 0, guess)
                 setGuesses(copy)
                 // remove guess from alphabet so player can't use it again
-                let alphabetCopy = alphabet 
-                alphabetCopy = alphabetCopy.filter(letter => letter !== guess)
-                setAlphabet(alphabetCopy)
+                const newAlphabet = alphabet.filter(letter => letter !== guess)
+                setAlphabet(newAlphabet)
             } 
         } 
         var j = (word.indexOf(guess))
