@@ -5,4 +5,4 @@
 3. Start the server with the command `npm start`.
 4. Play Hangman.
 
-Special thanks to Cathy Dutton (https://codepen.io/cathydutton/pen/JjpxMm) for allowing me to modify their code to create this app. See license for more information.
+Special thanks to Cathy Dutton (https://codepen.io/cathydutton/pen/JjpxMm) for allowing me to modify their code to create this app. See license and [original CodePen](https://codepen.io/cathydutton/pen/JjpxMm) for more information.
