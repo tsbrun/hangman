@@ -25,6 +25,8 @@ export default class LevelForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault()
 
+        // on refactor, dispatch sendUserLevel() action
+
         fetch("http://localhost:3001/levels", {
             method: 'POST',
             headers: { 

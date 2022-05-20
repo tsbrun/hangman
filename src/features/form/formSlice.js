@@ -6,7 +6,9 @@ export const formSlice = createSlice({
     name: 'form', 
     initialState,
     reducers: {
-
+        // loading - dispatch before post request
+        // success - dispatch upon confirmation of success
+        // failure - dispatch upon receiving error
     }
 })
 
