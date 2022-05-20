@@ -22,12 +22,8 @@ function Hangman() {
 
     if (counter === 0) {
         alert("You lost")
-        setCounter(8)
-        setGuesses([])
     } else if (word.join('') === guesses.join('')) {
         alert("You won")
-        setCounter(8)
-        setGuesses([])
     }
 
     // onClick event handler
