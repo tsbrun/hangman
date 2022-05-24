@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { submitLevel, formSelector } from "../../features/form/formSlice";
 import { Link } from "react-router-dom";
-import { submitLevel, successMessage } from "../../features/form/formSlice";
 
 export default function LevelForm() {
     // initialize redux hook
-    // const dispatch = useDispatch()
-    // const { message, loading, hasErrors } = useSelector(successMessage)
+    const dispatch = useDispatch()
+    // const { message, loading, hasErrors } = useSelector(formSelector)
+    // const { message } = useSelector((state) => state.message)
+    // const { loading } = useSelector((state) => state.loading)
+    // const { hasErrors } = useSelector((state) => state.hasErrors)
+
+    // console.log(message, loading, hasErrors)
 
     const [hint, setHint] = useState("")
     const [word, setWord] = useState("")
@@ -14,22 +19,9 @@ export default function LevelForm() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        // on refactor, dispatch sendUserLevel() action
-        // dispatch(submitLevel(hint, word))
-
-        // fetch("http://localhost:3001/levels", {
-        //     method: 'POST',
-        //     headers: { 
-        //         'Content-Type': 'application/json' 
-        //     },
-        //     body: JSON.stringify(this.state)
-        // }).then(resp => {
-        //     if (resp.status === 200) {
-        //         alert("Level submitted successfully.")
-        //     }
-        // }).catch(err => {
-        //     console.log(err)
-        // })
+        // properly format data before it is sent to api
+        const postData = {hint: hint, word: word}
+        dispatch(submitLevel(postData))
 
         // reset form
         setHint("")
