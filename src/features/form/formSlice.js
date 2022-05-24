@@ -34,7 +34,7 @@ export const formSlice = createSlice({
 export const { postData, postDataSuccess, postDataFailure } = formSlice.actions
 
 // create selector(s)
-export const formSelector = state => state.message
+export const formSelector = state => state.form
 
 // export reducer
 export default formSlice.reducer

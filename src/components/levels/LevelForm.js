@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 export default function LevelForm() {
     // initialize redux hook
     const dispatch = useDispatch()
-    // const { message, loading, hasErrors } = useSelector(formSelector)
+    const { message, loading, hasErrors } = useSelector(formSelector)
 
-    // console.log(message, loading, hasErrors)
+    console.log(message, loading, hasErrors)
 
     const [hint, setHint] = useState("")
     const [word, setWord] = useState("")
