@@ -1,69 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { submitLevel, formSelector } from "../../features/form/formSlice";
 import { Link } from "react-router-dom";
 
-export default class LevelForm extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            hint: '',
-            word: ''
-        }
+export default function LevelForm() {
+    // initialize redux hook
+    const dispatch = useDispatch()
+    const { message, loading, hasErrors } = useSelector(formSelector)
 
-        this.handleHintChange = this.handleHintChange.bind(this)
-        this.handleWordChange = this.handleWordChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+    console.log(message, loading, hasErrors)
 
-    handleHintChange(event) {
-        this.setState({hint: event.target.value})
-    }
+    const [hint, setHint] = useState("")
+    const [word, setWord] = useState("")
 
-    handleWordChange(event) {
-        this.setState({word: event.target.value})
-    }
-
-    handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault()
 
-        // on refactor, dispatch sendUserLevel() action
+        // properly format data before it is sent to api
+        const postData = {hint: hint, word: word}
+        dispatch(submitLevel(postData))
 
-        fetch("http://localhost:3001/levels", {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json' 
-            },
-            body: JSON.stringify(this.state)
-        }).then(resp => {
-            if (resp.status === 200) {
-                alert("Level submitted successfully.")
-            }
-        }).catch(err => {
-            console.log(err)
-        })
-
-        this.setState({ hint: '', word: '' })
+        // reset form
+        setHint("")
+        setWord("")
     }
 
-    render() {
-        return (
-            <>
-            <h2>Add Your Own Level</h2>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Word: 
-                    <input type="text" value={this.state.word} onChange={this.handleWordChange} />
-                </label>
-                <br /><br />
-                <label>
-                    Hint: 
-                    <textarea type="text" value={this.state.hint} onChange={this.handleHintChange} />
-                </label>                 
-                <br /><br />
-                <input type="submit" value="Submit" />
-            </form>
-            <br />
-            <Link to={"/"}>Back to Homepage</Link>
-            </>
-        )
-    }
+    return (
+        <>
+        <h2>Add Your Own Level</h2>
+        <form onSubmit={e => handleSubmit(e)}>
+            <label>
+                Word: 
+                <input type="text" value={word} onChange={e => setWord(e.target.value)} />
+            </label>
+            <br /><br />
+            <label>
+                Hint: 
+                <textarea type="text" value={hint} onChange={e => setHint(e.target.value)} />
+            </label>                 
+            <br /><br />
+            <input type="submit" value="Submit" />
+        </form>
+        <br />
+        <Link to={"/"}>Back to Homepage</Link>
+        </>
+    )
 }
