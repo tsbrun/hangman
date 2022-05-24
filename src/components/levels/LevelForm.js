@@ -7,9 +7,6 @@ export default function LevelForm() {
     // initialize redux hook
     const dispatch = useDispatch()
     // const { message, loading, hasErrors } = useSelector(formSelector)
-    // const { message } = useSelector((state) => state.message)
-    // const { loading } = useSelector((state) => state.loading)
-    // const { hasErrors } = useSelector((state) => state.hasErrors)
 
     // console.log(message, loading, hasErrors)
 

@@ -12,17 +12,19 @@ export const formSlice = createSlice({
     reducers: {
         // loading - dispatch before post request
         postData: state => {
+            state.message = "Sending data..."
             state.loading = true
         },
         // success - dispatch upon confirmation of success
         postDataSuccess: state => {
-            state.message = "Level successfully submitted.",
-            state.loading = false,
+            state.message = "Level successfully submitted."
+            state.loading = false
             state.hasErrors = false
         },
         // failure - dispatch upon receiving error
         postDataFailure: state => {
-            state.loading = false,
+            state.message = "Something went wrong."
+            state.loading = false
             state.hasErrors = true
         }
     }
@@ -32,7 +34,7 @@ export const formSlice = createSlice({
 export const { postData, postDataSuccess, postDataFailure } = formSlice.actions
 
 // create selector(s)
-export const successMessage = state => state.message
+export const formSelector = state => state.message
 
 // export reducer
 export default formSlice.reducer
