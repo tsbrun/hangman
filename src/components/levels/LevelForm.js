@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { submitLevel, successMessage } from "../../features/form/formSlice";
 
 export default function LevelForm() {
+    // initialize redux hook
+    // const dispatch = useDispatch()
+    // const { message, loading, hasErrors } = useSelector(successMessage)
+
     const [hint, setHint] = useState("")
     const [word, setWord] = useState("")
 
@@ -9,6 +15,7 @@ export default function LevelForm() {
         event.preventDefault()
 
         // on refactor, dispatch sendUserLevel() action
+        // dispatch(submitLevel(hint, word))
 
         // fetch("http://localhost:3001/levels", {
         //     method: 'POST',
@@ -32,7 +39,7 @@ export default function LevelForm() {
     return (
         <>
         <h2>Add Your Own Level</h2>
-        <form onSubmit={handleSubmit()}>
+        <form onSubmit={e => handleSubmit(e)}>
             <label>
                 Word: 
                 <input type="text" value={word} onChange={e => setWord(e.target.value)} />
