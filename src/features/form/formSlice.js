@@ -33,7 +33,7 @@ export const formSlice = createSlice({
 // generate actions 
 export const { postData, postDataSuccess, postDataFailure } = formSlice.actions
 
-// create selector that references portion of state relevant to the form
+// create selector that returns portion of state relevant to the form
 export const formSelector = state => state.form
 
 // export reducer
