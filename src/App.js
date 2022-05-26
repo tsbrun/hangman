@@ -26,7 +26,9 @@ function App() {
       <h1>Hangman</h1>
       <Home />
 
-      <Levels data={levels}  />
+      <div className='levels-container'>
+        <Levels data={levels}  />
+      </div>
 
       <br />
 
