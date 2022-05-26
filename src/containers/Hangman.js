@@ -51,7 +51,7 @@ function Hangman() {
     return(
         <>  
         <Link to="/">Home</Link>
-        <br /> 
+        <br /><br /> 
         <Image />
         <Hint hint={level.hint} />
 

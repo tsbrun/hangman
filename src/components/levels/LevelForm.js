@@ -30,6 +30,8 @@ export default function LevelForm() {
 
     return (
         <>
+        <Link to={"/"}>Home</Link>
+        <br /><br />
         <h2>Add Your Own Level</h2>
         <Form>
             <Form.Label>
@@ -44,8 +46,6 @@ export default function LevelForm() {
             <br /><br />
             <Button variant="primary" onClick={e => handleSubmit(e)}>Submit</Button>
         </Form>
-        <br />
-        <Link to={"/"}><Button variant="secondary">Back to Homepage</Button></Link>
         </>
     )
 }

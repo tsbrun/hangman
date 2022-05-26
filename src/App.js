@@ -28,7 +28,7 @@ function App() {
 
       <Levels data={levels}  />
 
-      <br /><br /> 
+      <br />
 
       <Link to={"/add-new-level"}>
         <Button variant="primary">Add Your Own Level</Button>
