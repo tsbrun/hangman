@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchLevels, levelsSelector } from './features/levels/levelsSlice';
 import Levels from './containers/Levels';
 
+import Button from 'react-bootstrap/Button';
+
 function App() {
   // initialize redux hook
   const dispatch = useDispatch()
@@ -29,7 +31,7 @@ function App() {
       <br /><br /> 
 
       <Link to={"/add-new-level"}>
-        <button>Add Your Own Level</button>
+        <Button variant="primary">Add Your Own Level</Button>
       </Link>
       
     </div>
