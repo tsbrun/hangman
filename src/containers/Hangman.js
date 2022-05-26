@@ -6,7 +6,6 @@ import Image from "../components/hangman/Image";
 import Hint from "../components/hangman/Hint";
 
 import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
 
 function Hangman() {
     // get level from location object

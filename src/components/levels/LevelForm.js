@@ -41,7 +41,7 @@ export default function LevelForm() {
             <br />
             <Form.Label>
                 Hint: 
-                <Form.Control type="text" value={hint} onChange={e => setHint(e.target.value)} />
+                <Form.Control as="textarea" value={hint} onChange={e => setHint(e.target.value)} />
             </Form.Label>                 
             <br /><br />
             <Button variant="primary" onClick={e => handleSubmit(e)}>Submit</Button>
