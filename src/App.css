@@ -3,3 +3,13 @@
   justify-items: start;
   grid-template-columns: repeat(10, 10%);
 }
+
+.levels-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+}
+
+.level-link {
+  text-decoration: none;
+}

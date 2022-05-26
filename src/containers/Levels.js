@@ -9,7 +9,7 @@ function Levels(props) {
         <>        
         <div className="levels-container">
             {levels.map(x => (
-                <Link to={`/hangman/${x.id}`} state={{ level: x }}>
+                <Link to={`/hangman/${x.id}`} state={{ level: x }} className="level-link">
                     <Level key={x.id} id={x.id} />
                 </Link>
             ))}

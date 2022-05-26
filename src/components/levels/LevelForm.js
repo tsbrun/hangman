@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { submitLevel, formSelector } from "../../features/form/formSlice";
 import { Link } from "react-router-dom";
 
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 export default function LevelForm() {
     // initialize redux hook
     const dispatch = useDispatch()
@@ -27,22 +30,22 @@ export default function LevelForm() {
 
     return (
         <>
+        <Link to={"/"}>Home</Link>
+        <br /><br />
         <h2>Add Your Own Level</h2>
-        <form onSubmit={e => handleSubmit(e)}>
-            <label>
+        <Form>
+            <Form.Label>
                 Word: 
-                <input type="text" value={word} onChange={e => setWord(e.target.value)} />
-            </label>
-            <br /><br />
-            <label>
+                <Form.Control type="text" value={word} onChange={e => setWord(e.target.value)} />
+            </Form.Label>
+            <br />
+            <Form.Label>
                 Hint: 
-                <textarea type="text" value={hint} onChange={e => setHint(e.target.value)} />
-            </label>                 
+                <Form.Control as="textarea" value={hint} onChange={e => setHint(e.target.value)} />
+            </Form.Label>                 
             <br /><br />
-            <input type="submit" value="Submit" />
-        </form>
-        <br />
-        <Link to={"/"}>Back to Homepage</Link>
+            <Button variant="primary" onClick={e => handleSubmit(e)}>Submit</Button>
+        </Form>
         </>
     )
 }

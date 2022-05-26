@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Image from "../components/hangman/Image";
 import Hint from "../components/hangman/Hint";
 
+import Button from "react-bootstrap/Button";
+
 function Hangman() {
     // get level from location object
     const location = useLocation()
@@ -46,14 +48,14 @@ function Hangman() {
     }
     
     return(
-        <>
-        <Link to="/">Home</Link>   
-
+        <>  
+        <Link to="/">Home</Link>
+        <br /><br /> 
         <Image />
         <Hint hint={level.hint} />
 
         <div className="word-container">
-            {alphabet.map(letter => <button onClick={e => checkGuess(e)}>{letter}</button>)}
+            {alphabet.map(letter => <Button variant="outline-info" size="sm" onClick={e => checkGuess(e)}>{letter}</Button>)}
             <br /><br />
             <h3>{guesses.join('')}</h3>
         </div>
