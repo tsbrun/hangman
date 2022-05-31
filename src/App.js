@@ -15,6 +15,7 @@ function App() {
   const dispatch = useDispatch()
   const { levels, loading, hasErrors } = useSelector(levelsSelector)
 
+  console.log(loading, hasErrors)
 
   // dispatch thunk when component first mounts
   useEffect(() => {

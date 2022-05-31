@@ -33,7 +33,8 @@ function Hangman() {
         const guess = event.target.innerText
         for (var i = 0; i < word.length; i++) {
             if (word[i] === guess) {
-                let copy = guesses 
+                let copy = guesses
+                // add guess to array at correct index
                 copy.splice(i, 0, guess)
                 setGuesses(copy)
                 // remove guess from alphabet so player can't use it again

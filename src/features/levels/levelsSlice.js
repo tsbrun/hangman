@@ -11,7 +11,7 @@ export const levelsSlice = createSlice({
     initialState,
     reducers: {
         getLevels: state => {
-            state.loading = true
+            state.loading = true // promise returned by fetch is pending
         },
         getLevelsSuccess: (state, { payload }) => {
             state.levels = payload 
